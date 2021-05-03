@@ -1,0 +1,72 @@
+insert into alimento (id, nome) values 
+(1, 'fruta'), 
+(2, 'verdura'),
+(3, 'carne'),
+(4, 'racao'),
+(5, 'sementes');
+
+
+insert into vacina (id, nome, descricao) values
+(1, 'vacina1', 'descricao1'),
+(2, 'vacina2', 'descricao2'),
+(3, 'vacina3', 'descricao3'),
+(4, 'vacina4', 'descricao4'),
+(5, 'vacina5', 'descricao5');
+
+
+insert into especie (id, nome)values
+(1, 'especie1'),
+(2, 'especie2'),
+(3, 'especie3'),
+(4, 'especie4'),
+(5, 'especie5');
+
+
+insert into especiealimento (especie_id, alimento_id) values
+(1, 1),
+(1, 2),
+(1, 4),
+(2, 3),
+(2, 4),
+(3, 5),
+(3, 4),
+(4, 4),
+(5, 1),
+(5, 2),
+(5, 5);
+
+
+insert into especievacina (especie_id, vacina_id) values
+(1, 3),
+(1, 5),
+(2, 1),
+(2, 2),
+(2, 3),
+(3, 3),
+(3, 2),
+(4, 4),
+(4, 5),
+(5, 1),
+(5, 2),
+(5, 4);
+
+
+insert into animal (id, nome, nascimento, origem, especie_id) values
+(1, 'mike', '2010-10-10', 'alemanha', 1),
+(2, 'tom', '2008-03-27', 'canada', 2),
+(3, 'jerry', '2001-09-15', 'angola', 3),
+(4, 'pit', '1997-02-28', 'portugal', 4),
+(5, 'gary', '2005-12-19', 'brasil', 5),
+(6, 'poo', '2002-06-30', 'siberia', 2);
+
+
+insert into animalvacina (animal_id, vacina_id) values 
+(1, 3),
+(2, 1),
+(2, 3),
+(3, 2),
+(3, 3),
+(5, 2),
+(6, 1),
+(6, 2);
+

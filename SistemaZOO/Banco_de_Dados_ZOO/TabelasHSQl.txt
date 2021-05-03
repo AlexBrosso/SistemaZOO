@@ -1,0 +1,63 @@
+
+                    
+CREATE TABLE especie  (
+   id INT PRIMARY KEY,
+   nome  VARCHAR(45) NOT NULL)
+);
+
+
+
+CREATE TABLE  animal  (
+   id INT PRIMARY KEY,
+   nome  VARCHAR(45) NOT NULL,
+   nascimento  DATE NOT NULL,
+   origem  VARCHAR(45)  NOT NULL,
+   especie_id  INT NOT NULL,
+   FOREIGN KEY ( especie_id ) REFERENCES     especie  ( id ) 
+);
+
+
+
+CREATE TABLE  vacina  (
+   id INT PRIMARY KEY,
+   nome  VARCHAR(45) NOT NULL,
+   descricao  VARCHAR(45) NOT NULL,
+);
+
+
+
+CREATE TABLE especieVacina  (
+   especie_id  INT NOT NULL,
+   vacina_id  INT NOT NULL,
+  PRIMARY KEY ( especie_id ,  vacina_id ),
+    FOREIGN KEY ( especie_id ) REFERENCES     especie  ( id ),
+    FOREIGN KEY ( vacina_id ) REFERENCES     vacina  ( id )
+);
+
+
+
+CREATE TABLE animalVacina  (
+   animal_id  INT NOT NULL,
+   vacina_id  INT NOT NULL,
+  PRIMARY KEY ( animal_id ,  vacina_id ),
+    FOREIGN KEY ( animal_id ) REFERENCES     animal  ( id ),
+    FOREIGN KEY ( vacina_id ) REFERENCES     vacina  ( id )
+);
+
+
+
+CREATE TABLE alimento  (
+   id INT PRIMARY KEY,
+   nome  VARCHAR(45) NOT NULL
+);
+
+
+
+CREATE TABLE especieAlimento  (
+   especie_id  INT NOT NULL,
+   alimento_id  INT NOT NULL,
+  PRIMARY KEY ( especie_id ,  alimento_id ),
+    FOREIGN KEY ( especie_id ) REFERENCES     especie  ( id ),
+    FOREIGN KEY ( alimento_id ) REFERENCES     alimento  ( id )
+);
+
